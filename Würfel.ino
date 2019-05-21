@@ -1,7 +1,5 @@
-boolean used = true;
-
 void setup() {
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 7; i++) {
 		pinMode(i, OUTPUT);
 	}
 	pinMode(7, INPUT);
@@ -9,14 +7,9 @@ void setup() {
 
 void loop() {
 	if (digitalRead(7) == HIGH) {
-		if (used == true) {
-			used = false;
-			int r = random(1, 6);
-			light(r)
-			delay(3000)
-			used = true;
-		}
+		light(random(1, 6));
 	}
+	delay(3000);
 }
 
 void light(int zahl) {
